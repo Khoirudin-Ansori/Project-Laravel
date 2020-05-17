@@ -20,7 +20,7 @@ class CreateMobilTable extends Migration
             $table->string('warna_mobil');
             $table->decimal('harga_mobil');
             $table->string('tahun_mobil');
-            $table->timestamps('deleted_at');
+            $table->datetime('deleted_at');
             $table->timestamps();
         });
     }

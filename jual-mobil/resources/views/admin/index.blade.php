@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@push('cssdttb')
+<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+@endpush
 @section('content')
 	<div class="card mt-5">
         @if(session('sukses'))
@@ -86,3 +89,32 @@
     </div>
 
 @endsection('content')
+@push('dttb')
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+
+<script type="text/javascript">
+ 
+  $(document).ready(function () {
+
+    var table = $('#datatable').DataTable();
+
+    table.on('click', '.detail', function () {
+
+      $tr = $(this).closest('tr');
+      if ($($tr).hasClass('child')) {
+        $tr = $tr.prev('.parent');
+      }
+
+      var data = table.row($tr).data();
+      console.log(data);    
+    })
+
+  })
+
+
+
+
+</script>
+@endpush

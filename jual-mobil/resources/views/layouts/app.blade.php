@@ -20,8 +20,7 @@
 
     <!-- Styles -->
     
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -29,11 +28,12 @@
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="{{ asset('asset/css/style2.css') }}">
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"> -->
 
     <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script> -->
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script> -->
+    @stack('cssdttb')
 </head>
 <body>
   <div class="wrapper">
@@ -48,35 +48,38 @@
                 <li>
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Data</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
+                        
                         <li>
                             <a class="nav-link active" href="/home">Data Mobil</a>
                         </li>
+                      
                         <li>
                             <a class="nav-link active" href="{{route ('admin.index')}}">Data Admin</a>
                         </li>
-                        <li>
-                            <a class="nav-link active" href="" data-toggle="modal" data-target="#modal">Data Penjualan</a>
-                        </li>
+                        
                         
                     </ul>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Download Data</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
                             <a href="{{ route('downloadasexcel')}}">Dwonload Data Mobil as Excel</a>
                         </li>
                         <li>
-                            <a href="mobil/downlaodaspdf" data-toggle="modal" data-target="#modal">Download Data Mobil as PDF</a>
+                            <a href="mobil/downlaodaspdf">Download Data Mobil as PDF</a>
                         </li>
                     </ul>
+                </li> -->
+                <li>
+                    <a class="nav-link active" href="{{ route('order.index') }}">Transaksi</a>
                 </li>
                 <li>
-                  <a class="nav-link active" href="" data-toggle="modal" data-target="#modal">Reporting</a>
+                  <a class="nav-link active" href="{{ route('order.show') }}">Reporting</a>
                 </li>
-                <li>
+                <!-- <li>
                     <a class="nav-link" href="#" data-toggle="modal" data-target="#modal">Total Stock</a>
-                </li>
+                </li> -->
                 <li>
                     <a class="nav-link" href="/mobil/trash">Trash</a>
                 </li>
@@ -119,7 +122,7 @@
               <div class="col-md6">
                 <button type="button" id="sidebarCollapse" class="btn btn-info btn-large">
                   <i class="fas fa-align-left"></i>
-                  <span>Mobil</span> 
+                  <span>Toogle Menu</span> 
                 </button>
               </div>
 
@@ -196,18 +199,23 @@
                 </div>
             </div>
         </nav>
- -->    <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
+
+ -->    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
-    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+
+    @stack('js')
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -222,41 +230,10 @@
             });
         });
     </script>
+    @stack('dttb')
 
 
-    <script type="text/javascript">
- 
-  $(document).ready(function () {
-
-    var table = $('#datatable').DataTable();
-
-    table.on('click', '.detail', function () {
-
-      $tr = $(this).closest('tr');
-      if ($($tr).hasClass('child')) {
-        $tr = $tr.prev('.parent');
-      }
-
-      var data = table.row($tr).data();
-      console.log(data);
-
-      $('#nama_mobil').val(data[0]);
-      $('#merk_mobil').val(data[1]);
-      $('#warna_mobil').val(data[2]);
-      $('#kode_suplier').val(data[3]);
-      $('#harga_mobil').val(data[4]);
-      $('#tahun_mobil').val(data[5]);
-
-      $('#EditModal').modal('show');
-
-    })
-
-  })
-
-
-
-
-</script>
+    
 
 <!-- modal penjualan -->
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
